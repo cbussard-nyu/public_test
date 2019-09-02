@@ -9,10 +9,10 @@ compiler:
   - gcc
 
 before_install:
-  - sudo apt -qq update
-  - sudo apt -qq full-upgrade
-  - sudo apt -qq autoremove
-  - sudo apt -qq install aspell aspell-en valgrind
+  - sudo apt-get -qq update
+  - sudo apt-get -qq upgrade
+  - sudo apt-get -qq autoremove
+  - sudo apt-get -qq install aspell aspell-en valgrind
   - wget --quiet https://media.githubusercontent.com/media/bernardosulzbach/bigword/master/data/en/books/a-tale-of-two-cities.txt
 
 install:
