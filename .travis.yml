@@ -10,7 +10,7 @@ compiler:
 
 before_install:
   - sudo apt update -qq && sudo apt full-upgrade
-  - sudo apt install -qq aspell valgrind
+  - sudo apt install -qq aspell aspell-en valgrind
   - wget https://media.githubusercontent.com/media/bernardosulzbach/bigword/master/data/en/books/a-tale-of-two-cities.txt
 
 install:
