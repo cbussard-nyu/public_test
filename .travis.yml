@@ -9,9 +9,11 @@ compiler:
   - gcc
 
 before_install:
-  - sudo apt update -qq && sudo apt full-upgrade -qq
-  - sudo apt install -qq aspell aspell-en valgrind
-  - wget https://media.githubusercontent.com/media/bernardosulzbach/bigword/master/data/en/books/a-tale-of-two-cities.txt
+  - sudo apt -qq update
+  - sudo apt -qq full-upgrade
+  - sudo apt -qq autoremove
+  - sudo apt -qq install aspell aspell-en valgrind
+  - wget --quiet https://media.githubusercontent.com/media/bernardosulzbach/bigword/master/data/en/books/a-tale-of-two-cities.txt
 
 install:
   - cd ${TRAVIS_BUILD_DIR}
@@ -20,6 +22,8 @@ install:
 # Build steps
 script:
   - cd ${TRAVIS_BUILD_DIR}
+  - echo "Building assignment now!"
 
 after_success:
   - cd ${TRAVIS_BUILD_DIR}
+  - echo "Automated build and testing completed!"
