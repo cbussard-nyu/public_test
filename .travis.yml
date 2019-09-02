@@ -15,7 +15,7 @@ before_install:
 
 install:
   - cd ${TRAVIS_BUILD_DIR}
-  - /usr/bin/aspell dump master > wordlist.txt
+  - aspell dump master > wordlist.txt
 
 # Build steps
 script:
