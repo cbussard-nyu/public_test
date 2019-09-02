@@ -1,0 +1,25 @@
+# Travis CI configuration for coverage testing
+language: c
+# sudo: false # only for faster builds
+# os: osx
+dist: bionic
+
+# Compiler selection
+compiler:
+  - gcc
+
+before_install:
+  - sudo apt update -qq && sudo apt full-upgrade
+  - sudo apt install -qq aspell valgrind
+  - wget https://media.githubusercontent.com/media/bernardosulzbach/bigword/master/data/en/books/a-tale-of-two-cities.txt
+
+install:
+  - cd ${TRAVIS_BUILD_DIR}
+  - aspell dump master > wordlist.txt
+
+# Build steps
+script:
+  - cd ${TRAVIS_BUILD_DIR}
+
+after_success:
+  - cd ${TRAVIS_BUILD_DIR}
